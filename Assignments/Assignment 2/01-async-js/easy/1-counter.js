@@ -1,3 +1,5 @@
+//I just had to create a simple counter but I got carried away 
+//this code is the same as clock.js in the medium section
 function counter() {
     const humanDate = new Date();
 
