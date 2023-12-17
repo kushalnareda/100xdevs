@@ -5,6 +5,20 @@
  */
 
 function sleep(milliseconds) {
+    return new Promise((resolve, reject) => {
+        if (typeof milliseconds != 'number' || milliseconds<0){
+            reject(new Error('Undifined'));
+        }
+        if(milliseconds<=0)
+            resolve();
+        else{
+            const startTime = new Date().getTime();
+            while ((new Date().getTime() - startTime) < milliseconds) {
+                //let it wait 
+            }
+            resolve();
+        }
+    })
 }
 
 module.exports = sleep;
