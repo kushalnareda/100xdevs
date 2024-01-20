@@ -1,0 +1,45 @@
+<html>
+    <script>
+        let timeout;
+        function debouncePopulateDiv(){
+            clearTimeout(timeout);
+            const timeout = setTimeout (function(){
+                populateDiv()
+            }, 1000); 
+        }
+        /*
+        function populateDiv() {
+            //debouncing 
+            const a = document.getElementById("firstNumber").value;
+            const b = document.getElementById("firstNumber").value;
+            //documenmt is used to acess html value inside something 
+            //const element = document.getElementById("final sum")
+            //console.log(element)
+            //fetch function 
+            fetch("http://sum-server.100xdevs.com/sum?a="+ a + "&b=" +b)
+                .then(function(response){
+                    response.text()
+                        .then(function(ans){
+                            document.getElementById("finalSum").innerHTML = ans;
+                        });
+                });
+            //element.innerHTML = parseInt(a)+ parseInt(b);
+            //element.innerHTMl is how you put a certain thing inside a div
+        }
+        */
+        async function populateDiv(){
+            const a = document.getElementById("firstNumber").value;
+            const b = document.getElementById("firstNumber").value;
+
+            const response =  await fetch("http://sum-server.100xdevs.com/sum?a="+ a + "&b=" +b)
+            const ans = await response.text();
+            document.getElementById("finalSum");
+        }
+    </script>
+    <body>
+        <input id ="firstNumber" type = "text" placeholder="First Name"></input><br></br>
+        <input id ="secondNumber" type = "text" placeholder="Second Name"></input><br></br>
+        <button onclick = "populateDiv()">Calculate Sum</button><br></br>
+        <div id = "final sum"></div>
+    </body>
+</html> 
