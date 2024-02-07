@@ -4,9 +4,7 @@ const Card = ({ name, description, socialMedia, interests, imageSrc})=> {
     return(
         <div className="card">
             <h2>{name}</h2>
-            <img src = './assets/k.png'  className="profile-image" />
-            <p>{description}</p>
-            
+            <p>{description}</p>          
             
             <div className="interests">
                 <h3>Interests</h3>
